@@ -1,39 +1,51 @@
-﻿@model CoffeeShop.Models.CustomerModel
+﻿@model User
 @{
     ViewData["Title"] = "Register";
 }
 
-<h2>Fill out the form below to make an account</h2>
+<h2>We're glad to have you on board</h2> <br />
 
-<form method="post" action="/home/formresponse">
+<form method="post" action="/home/UserProfile">
+    <fieldset>
+    <legend>Enter you information below:</legend> <br />
 
     <input type="hidden" asp-for="Id" />
 
     <div class="form-group">
         <label asp-for="FirstName">First name</label>
-        <input asp-for="FirstName" class="form-control" required/>
+        <input asp-for="FirstName" class="form-control" required />
         <span class="text-danger" asp-validation-for="FirstName"></span>
     </div>
     <div class="form-group">
         <label asp-for="LastName">Last name</label>
-        <input asp-for="LastName" class="form-control" required/>
+        <input asp-for="LastName" class="form-control" required />
         <span class="text-danger" asp-validation-for="LastName"></span>
     </div>
     <div class="form-group">
+        <label asp-for="Username">Username</label>
+        <input asp-for="Username" class="form-control" required />
+        <span class="text-danger" asp-validation-for="Username"></span>
+    </div>
+    <div class="form-group">
         <label asp-for="PhoneNumber">Phone number</label>
-        <input class="form-control" asp-for="PhoneNumber" required/>
+        <input class="form-control" asp-for="PhoneNumber" 
+               placeholder="Exanple: 313-676-9494" />
         <span class="text-danger" asp-validation-for="PhoneNumber"></span>
     </div>
     <div class="form-group">
         <label asp-for="Email"></label>
-        <input class="form-control" asp-for="Email" required/>
+        <input class="form-control" asp-for="Email" 
+               placeholder="Example: abc123@faangcorp.com" required/>
         <span class="text-danger" asp-validation-for="Email"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Password"></label>
-        <input class="form-control" type="password" asp-for="Password" required/>
+        <label asp-for="Password">Password</label>
+        <input class="form-control" type="password" asp-for="Password" 
+         placeholder="Must be at least 12 characters with a capital, number (0-9), and a special character" required />
         <span class="text-danger" asp-validation-for="Password"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Sign Up</button>
+
+    </fieldset>
 </form>
