@@ -32,6 +32,12 @@ namespace CoffeeShop.Controllers
         [HttpPost]
         public IActionResult FormResponse(CustomerModel customer)
         {
+            if (String.IsNullOrEmpty(customer.FullName) || String.IsNullOrEmpty(customer.Email)
+                || String.IsNullOrEmpty(customer.Password))
+            {
+                return RedirectToAction("Registration");
+            }
+
             ViewData["FullName"] = customer.FullName;
             ViewData["Email"] = customer.Email;
             ViewData["Password"] = customer.Password;
