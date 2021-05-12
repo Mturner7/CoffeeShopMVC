@@ -38,5 +38,5 @@ C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\ref\Coffe
 C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\CoffeeShop.pdb
 C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\CoffeeShop.genruntimeconfig.cache
 C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\CoffeeShop.csproj.CopyComplete
-C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\CoffeeShop\Registration.cshtml.g.cs
-C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\CoffeeShop\FormResponse.cshtml.g.cs
+C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\Home\FormResponse.cshtml.g.cs
+C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\Home\Registration.cshtml.g.cs

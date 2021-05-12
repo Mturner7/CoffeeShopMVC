@@ -24,23 +24,18 @@ namespace CoffeeShop.Controllers
         }
 
         [HttpGet]
-        public IActionResult Register()
+        public IActionResult Registration()
         {
-            return View("../CoffeeShop/Registration");
+            return View();
         }
 
         [HttpPost]
         public IActionResult FormResponse(CustomerModel customer)
         {
-            if (!ModelState.IsValid)
-            {
-                return View("../CoffeeShop/Registration");
-            }
-
             ViewData["FullName"] = customer.FullName;
             ViewData["Email"] = customer.Email;
             ViewData["Password"] = customer.Password;
-            return View("../CoffeeShop/FormResponse");
+            return View();
         }
 
         public IActionResult Privacy()
