@@ -130,8 +130,8 @@ C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\bin\Debug\net5.0\zh-Hans\M
 C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
-C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\Admin\Create.cshtml.g.cs
-C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\Admin\Delete.cshtml.g.cs
-C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\Admin\Edit.cshtml.g.cs
 C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
 C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\CoffeeShop.csprojAssemblyReference.cache
+C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\Admin\CreateForm.cshtml.g.cs
+C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\Admin\EditForm.cshtml.g.cs
+C:\Users\mturner7\dev\week5labs\CoffeeShop\CoffeeShop\obj\Debug\net5.0\Razor\Views\Admin\DeleteForm.cshtml.g.cs

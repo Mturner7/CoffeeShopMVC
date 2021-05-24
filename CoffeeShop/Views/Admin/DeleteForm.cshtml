@@ -1,0 +1,20 @@
+﻿@model Product
+@{
+}
+
+<h3>Are you sure you want to delete @Model.productName?</h3><br /><br />
+
+<h4>Product Info:</h4>
+
+<div>
+    <p>Price: @Model.productPrice</p>
+    <p>Category: @Model.productCategory</p>
+    <p>Description: @Model.productDescription</p>
+    <p>@Model.productDescription</p>
+</div>
+
+
+<a href="/admin/" class="btn btn-dark">No, I've changed my mind</a>
+<form method="post" action="/admin/delete">
+    <button class="btn btn-danger" type="submit">Yes, Delete this item</button>
+</form>
