@@ -14,7 +14,7 @@
 </div>
 
 
-<a href="/admin/" class="btn btn-dark">No, I've changed my mind</a>
-<form method="post" action="/admin/delete">
-    <button class="btn btn-danger" type="submit">Yes, Delete this item</button>
+<form method="post" action="/admin/delete/@Model.productId">
+    <a href="/admin/" class="btn btn-dark">No, I've changed my mind</a>
+    <input type="submit" class="btn btn-danger" value="Yes, delete" />
 </form>

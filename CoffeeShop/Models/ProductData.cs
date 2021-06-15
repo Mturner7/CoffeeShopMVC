@@ -1,15 +1,21 @@
 ﻿using System;
 using System.Linq;
-using MySql.Data.MySqlClient;
 using Dapper.Contrib.Extensions;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CoffeeShop.Models
 {
     public class ProductData
     {
-        private static MySqlConnection connection = new MySqlConnection("Server=127.0.0.1;Database=Northwind;Uid=root;Password=Whitereaper12;");
-        
+        private static IDbConnection connection;
+
+        public ProductData(IDbConnection _con)
+        {
+            connection = _con;
+        }
+
+
         public static void Create(Product newProduct)
         {
             connection.Insert(newProduct);

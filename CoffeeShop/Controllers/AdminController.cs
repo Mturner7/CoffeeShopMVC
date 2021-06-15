@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -67,11 +68,12 @@ namespace CoffeeShop.Controllers
 
 
         [HttpPost]
-        public IActionResult Delete(Product oldProduct)
+        public IActionResult Delete(int id)
         {
-            ProductData.Delete(oldProduct);
+            Product oldProduct = new Product();
+            oldProduct.productId = id;
 
-            ViewData["Message"] = $"Salutations! Congratulations, '{oldProduct.productName}' has been deleted!";
+            ProductData.Delete(oldProduct);
             
             return RedirectToAction("Index");
         }

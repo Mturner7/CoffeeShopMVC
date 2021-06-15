@@ -5,47 +5,110 @@
 
 <h2>We're glad to have you on board</h2> <br />
 
-<form method="post" action="/home/UserProfile">
+<form method="post" action="/home/UserProfile" onsubmit="return validate()">
     <fieldset>
-    <legend>Enter you information below:</legend> <br />
+        <legend>Enter you information below:</legend> <br />
 
-    <input type="hidden" asp-for="Id" />
+        <input type="hidden" name="Id" />
 
-    <div class="form-group">
-        <label asp-for="FirstName">First name</label>
-        <input asp-for="FirstName" class="form-control" required />
-        <span class="text-danger" asp-validation-for="FirstName"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="LastName">Last name</label>
-        <input asp-for="LastName" class="form-control" required />
-        <span class="text-danger" asp-validation-for="LastName"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Username">Username</label>
-        <input asp-for="Username" class="form-control" required />
-        <span class="text-danger" asp-validation-for="Username"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="PhoneNumber">Phone number</label>
-        <input class="form-control" asp-for="PhoneNumber" 
-               placeholder="Exanple: 313-676-9494" />
-        <span class="text-danger" asp-validation-for="PhoneNumber"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input class="form-control" asp-for="Email" 
-               placeholder="Example: abc123@faangcorp.com" required/>
-        <span class="text-danger" asp-validation-for="Email"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Password">Password</label>
-        <input class="form-control" type="password" asp-for="Password" 
-         placeholder="Must be at least 12 characters with a capital, number (0-9), and a special character" required />
-        <span class="text-danger" asp-validation-for="Password"></span>
-    </div>
+        <div class="form-group">
+            <div class="text-danger" id="firstnamemsg"></div>
+            <label name="FirstName">First name</label>
+            <input name="FirstName" id="firstname" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <div class="text-danger" id="lastnamemsg"></div>
+            <label name="LastName">Last name</label>
+            <input name="LastName" id="lastname" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <div class="text-danger" id="usernamemsg"></div>
+            <label name="Username">Username</label>
+            <input name="Username" id="username" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <div class="text-danger" id="phonenumbermsg"></div>
+            <label name="PhoneNumber">Phone number</label>
+            <input class="form-control" name="PhoneNumber" id="phonenumber"
+                   placeholder="Example: 313-676-9494" />
+        </div>
+        <div class="form-group">
+            <div class="text-danger" id="emailmsg"></div>
+            <label name="Email"></label>
+            <input class="form-control" name="Email" id="email"
+                   placeholder="Example: abc123@faangcorp.com" required />
+        </div>
+        <div class="form-group">
+            <div class="text-danger" id="passwordmsg"></div>
+            <label name="Password">Password</label>
+            <input class="form-control" type="password" name="Password" id="password"
+                   placeholder="Must be at least 6 characters with a capital, number (0-9), and a special character" required />
+        </div>
 
-    <button type="submit" class="btn btn-primary">Sign Up</button>
+        <div class="form-group">
+            <div class="text-danger" id="confirmpasswordmsg"></div>
+            <label name="Password">Password</label>
+            <input class="form-control" type="password" id="confirmpassword"
+                   placeholder="Re-enter your password" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign Up</button>
 
     </fieldset>
 </form>
+
+<script>
+    function validate() {
+        var stat = true;
+        let firstname = document.getElementById('firstname');
+        let firstnamemsg = document.getElementById('firstnamemsg');
+        if (firstname.value.match(/^[a-zA-Z]{2,}$/) == null) {
+            firstnamemsg.innerHTML = "Please enter a name with at least 2 letters and no special characters";
+            stat = false;
+        }
+
+        let lastname = document.getElementById('lastname');
+        let lastnamemsg = document.getElementById('lastnamemsg');
+        if (lastname.value.match(/^[a-zA-Z]{2,}$/) == null) {
+            lastnamemsg.innerHTML = "Please enter a name with at least 2 letters and no special characters";
+            stat = false;
+        }
+
+        let username = document.getElementById('username');
+        let usernamemsg = document.getElementById('usernamemsg');
+        if (username.value.match(/^[\w\d]{6,}$/) == null) {
+            usernamemsg.innerHTML = "Please enter a username with at least 6 characters (alphanumeric characters only)";
+            stat = false;
+        }
+
+        let phonenumber = document.getElementById('phonenumber');
+        let phonenumbermsg = document.getElementById('phonenumbermsg');
+        if (phonenumber.value.match(/^(\(\d{3}\)|\d{3})([\.\-\s])?(\d{3})([\.\-\s])?(\d{4})([\.\-\s])?$/) == null) {
+            phonenumbermsg.innerHTML = "Please enter a valid phone number!";
+            stat = false;
+        }
+
+        let email = document.getElementById('email');
+        let emailmsg = document.getElementById('emailmsg');
+        if (email.value.match(/^\w{5,30}\@@\w{5,10}\.\w{1,5}$/) == null) {
+            emailmsg.innerHTML = "Please enter a valid email address!";
+            stat = false;
+        }
+
+        let password = document.getElementById('password');
+        let passwordmsg = document.getElementById('passwordmsg');
+        if (password.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$!%*?&])[A-Za-z\d$!%*?&]{6,}$/) == null) {
+            passwordmsg.innerHTML = "Password needs to be at least 6 characters with an uppercase, numeric, and special character";
+            stat = false;
+        }
+
+        let confirmpassword = document.getElementById('confirmpassword');
+        let confirmpasswordmsg = document.getElementById('confirmpasswordmsg');
+        if (confirmpassword === password.innerHTML) {
+            confirmpasswordmsg.innerHTML = "Passwords do not match!";
+            stat = false;
+        }
+
+        return stat;
+    }
+</script>
